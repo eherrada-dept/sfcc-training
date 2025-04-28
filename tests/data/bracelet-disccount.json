@@ -1,0 +1,34 @@
+{
+  "braceletDiscount": [
+    {
+      "name": "Validate coupon in womens bracelets",
+      "navigation": {
+        "categoryPath": [
+          {
+            "id": "womens",
+            "action": "hover"
+          },
+          {
+            "id": "womens-jewelry",
+            "action": "hover"
+          },
+          {
+            "id": "womens-jewelry-bracelets",
+            "action": "click"
+          }
+        ]
+      },
+      "product": {
+        "dataPid": "25720052M",
+        "action": "addToCart"
+      },
+      "coupon": {
+        "code": "EASYBRACELET",
+        "validation": {
+          "type": "percentage",
+          "value": 10
+        }
+      }
+    }
+  ]
+} 
