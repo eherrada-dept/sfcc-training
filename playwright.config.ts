@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 import path from 'path';
-import { STORE_CONFIG, BROWSER_CONFIG, TIMEOUT_CONFIG } from './config/environment';
+import { STORE_CONFIG } from './config/environment';
 
 /**
  * Read environment variables from file.
@@ -31,21 +31,6 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    
-    /* Timeouts */
-    navigationTimeout: TIMEOUT_CONFIG.NAVIGATION,
-    actionTimeout: TIMEOUT_CONFIG.ACTION,
-    
-    /* Viewport size */
-    viewport: {
-      width: BROWSER_CONFIG.VIEWPORT.WIDTH,
-      height: BROWSER_CONFIG.VIEWPORT.HEIGHT
-    },
-    
-    /* Slow down operations for debugging */
-    launchOptions: {
-      slowMo: BROWSER_CONFIG.SLOW_MO
-    }
   },
 
   /* Configure projects for major browsers */
@@ -54,12 +39,10 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
-
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },

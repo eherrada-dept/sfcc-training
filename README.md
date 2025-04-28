@@ -1,5 +1,7 @@
 # Playwright Salesforce Commerce Cloud Tests
 
+![Node.js](https://img.shields.io/badge/Node.js-20.x-green)
+
 This repository contains automated tests for Salesforce Commerce Cloud (SFCC) using Playwright.
 
 ## Project Structure
@@ -56,6 +58,12 @@ To run tests in a specific browser:
 npx playwright test --project=chromium
 ```
 
+To run tests with visible browser (headed mode):
+
+```
+npx playwright test --project=chromium --headed
+```
+
 ## Testing Strategy
 
 The tests use a parameterized approach with data stored in JSON files. This allows:
@@ -72,13 +80,3 @@ The project uses a centralized configuration file (`config/environment.ts`) that
 - Groups variables by category (URLs, browsers, timeouts, users)
 - Facilitates the addition of new configuration variables
 - Improves code maintainability
-
-## Contributing
-
-1. Create a branch for your feature
-2. Make your changes
-3. Submit a pull request
-
-## License
-
-MIT 
